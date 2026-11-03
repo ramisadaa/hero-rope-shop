@@ -1,0 +1,6 @@
+Rights notice
+=============
+The existing project's all-rights-reserved notice is retained. No new open-source
+license is granted by this distribution. The owner can choose an explicit license
+before publication. This file does not assert ownership of third-party API content.
+Development dependencies retain their own licenses; they are not runtime assets.

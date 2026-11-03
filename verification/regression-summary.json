@@ -1,0 +1,9 @@
+{
+  "browser": "chromium",
+  "version": "131.0.6778.0",
+  "checks": 19,
+  "mobileBounds": {
+    "heroHeight": 505.859375,
+    "firstProductY": 881.328125
+  }
+}

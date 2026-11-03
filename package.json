@@ -1,0 +1,25 @@
+{
+  "name": "hero-rope-final",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A local-first demo storefront with an accessible surprise rope",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "test": "node --test tests/core.test.cjs",
+    "test:browser": "node tests/browser.cjs && node tests/regressions.cjs",
+    "browsers:install": "playwright install chromium firefox webkit",
+    "lint": "eslint store-core.js script.js hero-rope.js catalog-data.js",
+    "build": "node scripts/build.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.3",
+    "esbuild": "0.24.2",
+    "eslint": "10.14.0",
+    "globals": "15.14.0",
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

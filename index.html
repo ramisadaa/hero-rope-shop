@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover clothing, accessories and tech. My Shop is an interactive JavaScript demo store with a surprise product rope.">
+    <meta name="theme-color" content="#b23e3b">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://fakestoreapi.com; connect-src 'self' https://fakestoreapi.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:title" content="My Shop — Good finds. Great little upgrades.">
+    <meta property="og:description" content="Explore the collection, pull the surprise rope and try the demo shopping experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/social-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Shop — Good finds.">
+    <meta name="twitter:description" content="An interactive demo storefront with a surprise product rope.">
+    <meta name="twitter:image" content="assets/social-preview.png">
+    <link rel="preconnect" href="https://fakestoreapi.com" crossorigin>
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>My Shop | Good finds. Great little upgrades.</title>
+    <link rel="icon" href="assets/shop.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="catalog-data.js?v=2" defer></script>
+    <script src="store-core.js?v=2" defer></script>
+    <script src="script.js?v=2" defer></script>
+    <script src="hero-rope.js?v=2" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#products">Skip to products</a>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a class="logo" href="#top" aria-label="My Shop home">
+                <svg class="shop-mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M5 3h22l4 9H1l4-9Zm-2 12h5v12h6V16h5v11h5V15h5v16H3V15Z"/></svg>
+                <span class="logo-word">My Shop<span class="dot">.</span></span>
+            </a>
+            <ul class="nav-links"><li><a href="#products">Explore products</a></li><li><a href="#footer">About</a></li></ul>
+            <div class="cart-wrapper">
+                <button class="cart" type="button" aria-label="Shopping cart, 0 items" aria-controls="cart-popup" aria-expanded="false">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 3h3l3 12h11l3-9H6"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg>
+                    <span class="counter" aria-hidden="true">0</span><span class="cart-label">cart</span>
+                </button>
+                <section class="popup" id="cart-popup" aria-labelledby="cart-title" hidden>
+                    <div class="popup-header"><h2 id="cart-title">Your Cart</h2><button class="close-popup" type="button" aria-label="Close cart">×</button></div>
+                    <div class="popup-body"><p class="empty-cart">Your cart is empty.</p><ul class="cart-items"></ul></div>
+                    <div class="popup-footer" hidden>
+                        <p class="cart-total">Total: <strong class="total-price">$0.00</strong></p>
+                        <p class="cart-price-note" hidden></p><button class="accept-prices secondary-button" type="button" hidden>Accept updated prices</button>
+                        <button class="checkout-button" type="button">Checkout</button>
+                        <button class="clear-cart secondary-button" type="button">Clear cart</button>
+                    </div>
+                    <p class="storage-message" role="status" hidden></p>
+                </section>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" id="top">
+        <noscript><p class="noscript-note">JavaScript is required for the catalog, cart and checkout. Enable it, then reload this page.</p></noscript>
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="hero-subtitle">THE EVERYDAY COLLECTION</p>
+                <h1 class="hero-title" id="hero-title">Good finds.<br><span>Great little upgrades.</span></h1>
+                <p class="hero-description">Discover clothing, accessories and tech, all in one place.</p>
+                <a class="explore-button" href="#products">Explore Now</a>
+            </div>
+            <div class="surprise-rope" role="group" aria-label="Discover a random product">
+                <div class="sr-glow" aria-hidden="true"></div>
+                <div class="sr-scaled"><div class="sr-suspension">
+                    <svg class="sr-cable" width="360" height="490" viewBox="0 0 360 490" aria-hidden="true"><defs><pattern id="rope-braid" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="10" fill="#f9d9a3"/><path d="M0 0L7 5M0 5L7 10" stroke="#a77841" stroke-width="1.4"/></pattern></defs><path d="M280 -10 Q280 58 280 118"></path><circle cx="280" cy="3" r="5"></circle></svg>
+                    <button class="sr-handle" type="button" aria-disabled="false" aria-label="Pull down, or press, to discover a random product"><span aria-hidden="true">↓</span><b>PULL</b></button>
+                </div></div>
+                <div class="sr-result" hidden>
+                    <div class="sr-picture"><img alt=""><span class="sr-image-fallback" hidden>Image unavailable</span></div>
+                    <h2></h2><strong class="sr-price"></strong>
+                    <button class="sr-add" type="button">+ Add to cart</button>
+                </div>
+                <p class="sr-status" role="status" aria-live="polite">Pull the rope. Find your next favorite.</p>
+                <button class="sr-motion" type="button" aria-pressed="false">Pause motion</button>
+                <div class="sr-sparks" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="catalog" id="products" aria-labelledby="catalog-title">
+            <div class="catalog-heading"><div><p class="eyebrow">FIND YOUR NEXT FAVORITE</p><h2 id="catalog-title">Explore products</h2></div><p class="result-count" aria-live="polite"></p></div>
+            <div class="catalog-message" hidden><p></p><button class="refresh-catalog secondary-button" type="button">Retry live catalog</button></div>
+            <div class="catalog-toolbar">
+                <label class="search-field"><span class="sr-only">Search products</span><input id="search" type="search" placeholder="Search products…" maxlength="150"></label>
+                <label><span class="sr-only">Product category</span><select id="category"><option value="all">All categories</option></select></label>
+                <label><span class="sr-only">Sort products</span><select id="sort"><option value="default">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A–Z</option></select></label>
+            </div>
+            <div class="loading-state" role="status"><span class="spinner" aria-hidden="true"></span>Loading the collection…</div>
+            <div class="error-state state-panel" hidden><h3>We couldn’t load the products.</h3><p>Check your connection and try again.</p><button class="retry-button primary-button" type="button">Try again</button></div>
+            <div class="empty-state state-panel" hidden><h3>No matching products</h3><p>Try another search or category.</p><button class="reset-filters secondary-button" type="button">Reset filters</button></div>
+            <div class="products" aria-busy="true"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="footer"><div class="container footer-content">
+        <div><p class="footer-brand">My Shop<span>.</span></p><p>© <span class="year">2026</span> All rights reserved.</p><p class="footer-note">A demo storefront. No real payments.</p><div class="footer-links"><button class="open-info" data-info="about" type="button">About</button><button class="open-info" data-info="privacy" type="button">Privacy</button><button class="open-info" data-info="terms" type="button">Demo terms</button><button class="view-receipt" type="button" hidden>Last demo receipt</button></div></div>
+        <div class="footer-share"><p>Share your good finds.</p><div class="social-icons">
+            <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">f</a>
+            <a class="share-twitter" href="https://x.com/intent/tweet" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.5 5.4 22H2.2l8.3-9.5L1.2 2h6.5l4.4 6.7L18.9 2ZM17.8 20h1.8L6.7 4H4.8l13 16Z"/></svg></a>
+            <button class="share-copy" type="button" aria-label="Copy page link">↗</button>
+        </div></div>
+    </div></footer>
+
+    <dialog class="product-dialog" aria-labelledby="detail-title">
+        <div class="detail-header"><span class="eyebrow">TAKE A CLOSER LOOK</span><button class="close-detail icon-button" type="button" aria-label="Close product details">×</button></div>
+        <div class="detail-layout"><div class="detail-media"></div><div class="detail-content"><p class="detail-category"></p><h2 id="detail-title"></h2><p class="detail-description"></p><p class="detail-price"></p><button class="detail-add primary-button" type="button">+ Add to cart</button></div></div>
+        <p class="modal-live sr-only" role="status" aria-live="polite"></p>
+        <div class="dialog-toast toast"><span class="toast-text"></span><button class="toast-undo" type="button" hidden>Undo</button><button class="toast-close" type="button" aria-label="Dismiss notification">×</button></div>
+    </dialog>
+
+    <dialog class="checkout-screen" id="checkout-screen" aria-labelledby="checkout-title">
+        <div class="checkout-container">
+            <header class="checkout-header"><div><h2 id="checkout-title">Checkout</h2><p>Review your order and complete your details.</p></div><button class="back-to-shop secondary-button" type="button">← Back to shop</button></header>
+            <div class="checkout-layout">
+                <section class="order-summary" aria-labelledby="order-summary-title">
+                    <h3 id="order-summary-title">Order Summary</h3>
+                    <div class="order-table-wrapper"><table class="order-table"><thead><tr><th scope="col">Product</th><th scope="col">Quantity</th><th scope="col">Price</th><th scope="col">Subtotal</th></tr></thead><tbody class="checkout-items"></tbody></table></div>
+                    <div class="order-totals"><p>Total items <span class="checkout-count">0</span></p><p class="order-grand-total">Product total (USD) <strong class="checkout-total">$0.00</strong></p></div>
+                </section>
+                <section class="checkout-details" aria-labelledby="checkout-details-title">
+                    <h3 id="checkout-details-title">Customer &amp; Payment Details</h3>
+                    <p class="checkout-availability" hidden></p><button class="accept-prices secondary-button" type="button" hidden>Accept updated prices</button>
+                    <form class="checkout-form" id="checkout-form" method="dialog">
+                        <fieldset class="customer-fields"><legend>Customer Information</legend>
+                            <div class="form-field"><label for="customer-name">Full name</label><input type="text" id="customer-name" name="customerName" placeholder="Enter your full name" autocomplete="name" maxlength="100" required></div>
+                            <div class="form-field"><label for="customer-email">Email address</label><input type="email" id="customer-email" name="customerEmail" placeholder="name@example.com" autocomplete="email" maxlength="254" required></div>
+                        </fieldset>
+                        <fieldset class="payment-fields"><legend>Payment Details</legend>
+                            <p class="payment-note" id="payment-note">Demo only. Use card <strong>4242 4242 4242 4242</strong>, a future expiry and CVV <strong>123</strong>. Other card numbers are rejected. USD product total only; no shipping or tax is charged.</p>
+                            <div class="form-field"><label for="card-number">Card number</label><input type="text" id="card-number" placeholder="4242 4242 4242 4242" inputmode="numeric" autocomplete="off" maxlength="23" aria-describedby="payment-note" required></div>
+                            <div class="form-row"><div class="form-field"><label for="card-expiry">Expiry date (MM/YY or MM/YYYY)</label><input type="text" id="card-expiry" placeholder="MM/YY" inputmode="numeric" autocomplete="off" maxlength="7" title="Enter MM/YY or MM/YYYY, for example 12/2030" required></div><div class="form-field"><label for="card-cvv">CVV</label><input type="password" id="card-cvv" placeholder="123" inputmode="numeric" autocomplete="off" maxlength="3" pattern="123" title="Use test CVV 123" required></div></div>
+                        </fieldset>
+                        <label class="order-confirmation"><input type="checkbox" id="confirm-order" required><span>I have reviewed the items, quantities and total.</span></label>
+                        <p class="draft-message" role="status" hidden></p><p class="checkout-message" role="status" aria-live="polite"></p>
+                        <button class="place-order-button" type="submit">Confirm Demo Order</button>
+                    </form>
+                    <p class="receipt-note" role="status" hidden></p><div class="checkout-success" hidden><span class="success-mark" aria-hidden="true">✓</span><h3 tabindex="-1">Your demo order is confirmed.</h3><p class="success-summary"></p><p>No payment was processed. Your card details were cleared.</p><button class="continue-shopping primary-button" type="button">Continue shopping</button></div>
+                </section>
+            </div>
+        </div>
+        <p class="modal-live sr-only" role="status" aria-live="polite"></p>
+        <div class="dialog-toast toast"><span class="toast-text"></span><button class="toast-undo" type="button" hidden>Undo</button><button class="toast-close" type="button" aria-label="Dismiss notification">×</button></div>
+    </dialog>
+    <dialog class="info-dialog" aria-labelledby="info-title"><div class="detail-header"><h2 id="info-title"></h2><button class="close-info icon-button" type="button" aria-label="Close information">×</button></div><div class="info-body"></div><button class="clear-saved-data secondary-button" type="button" hidden>Clear saved store data</button><p class="modal-live sr-only" role="status" aria-live="polite"></p><div class="dialog-toast toast"><span class="toast-text"></span><button class="toast-undo" type="button" hidden>Undo</button><button class="toast-close" type="button" aria-label="Dismiss notification">×</button></div></dialog>
+    <p class="page-live sr-only" role="status" aria-live="polite"></p><p class="page-alert sr-only" role="alert"></p>
+    <div class="toast"><span class="toast-text"></span><button class="toast-undo" type="button" hidden>Undo</button><button class="toast-close" type="button" aria-label="Dismiss notification">×</button></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Final v2.0.0 — review resolution map
+===================================
+1  Cart blur dismissal removed; outside-click and Escape remain.
+2  Rope busy state uses aria-disabled; keyboard focus is retained.
+3  Token-prefix, order-independent search with title weighting and stable sorting.
+4  Packaged local catalog/assets + last-successful catalog cache + bounded background retry.
+5  Darker text-side gradient, opaque rope-label surfaces, sampled rendered contrast.
+6  Portable browser suites, fixtures, axe, contrast sampling, package/lock, lint and CI supplied.
+7  Accepted-price snapshot preserved; visible changes require explicit acceptance.
+8  Mobile rope reduced to 230–260px; idle animation moved off the JS frame loop.
+9  Misleading Contact link replaced with About. Demo/privacy notes explain actual scope.
+   No merchant address or contact information was invented.
+10 Singular item text and automatic copyright year.
+11 Near-top noscript message; loading spinner hidden when scripts do not run.
+12 Fixed live regions, dedicated alert, decorative duplicate images and fewer tab stops.
+13 Larger targets and typography; coarse-pointer quantity controls are 44px.
+14 Only the specified demo card/CVV accepted. Four-digit expiry years are preserved.
+15 Local receipt saved before cart clear, with random reference and reopen action.
+   Real shipping/tax/payment are explicitly outside the demo, rather than fabricated.
+16 Share metadata/image, local SVG X icon, documented intent route and product hashes.
+17 Compositor idle motion; no idle left/top/path writes; image preloading; preconnect;
+   eager first-row images; minification/content hashes in the production build.
+18 CSP/referrer restrictions, hosting header examples and storageArea validation.
+19 Compact cart record with accepted price; full catalog stored once; legacy migration.
+20 Keyed cart rows preserve image nodes; remove/clear provide Undo.
+
+Other: braided rope and round wooden pull handle, aspect ratio preserved; logo spacing
+and naming unified; shuffle-bag picker is unit-tested; category display labels cleaned;
+English/numeric sorting fixed; hover transforms suppressed for touch; header scrolled
+separator; local icons/manifest; English UI strategy; ownership/license notice retained.
+
+Physical Apple devices, Safari and Firefox were not available in the local execution
+environment. Runnable suites support all three Playwright engines; CI declares Chromium
+and Firefox. Automated checks are not a substitute for manual assistive-technology QA.

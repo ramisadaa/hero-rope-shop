@@ -1,0 +1,75 @@
+Hero Rope Final v2.0.0 — executed verification
+=============================================
+
+Results on this release
+-----------------------
+- ESLint: passed.
+- Node logic tests: 18 passed.
+- Primary browser suite: 80 checks passed.
+- Additional review regressions: 19 checks passed.
+- Production build: passed (esbuild minification + content-hash versions).
+
+The numbers above describe assertions executed by the supplied scripts, not a
+claim that every browser, assistive technology or production scenario was tested.
+
+Reproduce
+---------
+npm ci
+npm run lint
+npm test
+npx playwright install chromium
+npm run test:browser
+npm run build
+
+Files
+-----
+tests/core.test.cjs    Product/cart/search/expiry/shuffle rules.
+tests/browser.cjs      Main browser flow, layout, axe and rendered contrast samples.
+tests/regressions.cjs  Focus, receipt, undo, compact cart rendering, offline/cache,
+                       CSP and disabled-JavaScript regressions.
+tests/fixtures.cjs     Deterministic product data; image SVG fixtures are in the runner.
+verification/          Machine-readable summaries from the executed runs.
+
+Environment and scope
+---------------------
+- Chromium 131.0.6778.0, controlled through Playwright.
+- A local HTTP server served the actual source files.
+- API and image responses were intercepted with fixtures.
+- Viewport widths: 320, 375, 480, 768, 1024 and 1440 CSS pixels.
+- Keyboard, pointer drag, reduced-motion, blocked storage, malformed stored data,
+  cross-tab changes, transient HTTP failure, timeout and full API outage were checked.
+- Hero and checkout screenshots were inspected internally; screenshots are not
+  included in this archive. They are generated locally when tests run.
+- Mobile measurement at 390px: Hero ~505.86px, first product ~881.33px from document
+  top; the previous version measured ~822.16px and ~1200.44px respectively.
+
+Contrast and automated accessibility
+------------------------------------
+Axe reported no violations in the tested catalog and checkout states. It also
+reported color-contrast cases requiring manual review; those are retained in
+verification/accessibility-review.json. They are not counted as passes.
+
+The browser suite separately hides the Hero subtitle/description without changing
+layout, samples their rendered background pixels and computes the contrast ratio.
+Minimum sampled ratios:
+- Subtitle, 390px: 5.72:1
+- Description, 390px: 5.54:1
+- Subtitle, 1440px: 6.19:1
+- Description, 1440px: 6.35:1
+
+Other rope text sits on opaque high-contrast surfaces. Sampled contrast is scoped
+to the listed elements and sizes; this is not a complete WCAG certification or
+manual screen-reader audit.
+
+Not executed here
+-----------------
+- Safari, WebKit and Firefox or physical iPhone/macOS devices.
+- Complete screen-reader testing.
+- Availability/correctness of the live external API.
+- Real payments, shipping, tax, stock reservation or backend order processing.
+- Social-crawler previews at a public deployed URL.
+- A complete security or legal/compliance audit.
+
+The test runner supports BROWSER=firefox or BROWSER=webkit after installing the
+corresponding Playwright browser. CI configuration declares Chromium and Firefox,
+but no claim is made that a remote CI run has already occurred.

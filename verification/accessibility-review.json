@@ -1,0 +1,40 @@
+{
+  "violations": [],
+  "requiresManualReview": [
+    {
+      "id": "color-contrast",
+      "targets": [
+        [
+          ".hero-subtitle"
+        ],
+        [
+          "#hero-title"
+        ],
+        [
+          "#hero-title > span"
+        ],
+        [
+          ".hero-description"
+        ],
+        [
+          ".explore-button"
+        ],
+        [
+          "b"
+        ],
+        [
+          "h2[title=\"Everyday Canvas Backpack\"]"
+        ],
+        [
+          ".sr-price"
+        ],
+        [
+          ".sr-add"
+        ],
+        [
+          ".sr-motion"
+        ]
+      ]
+    }
+  ]
+}

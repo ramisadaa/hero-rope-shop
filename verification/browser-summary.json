@@ -1,0 +1,7 @@
+{
+  "browser": "chromium",
+  "version": "131.0.6778.0",
+  "checks": 80,
+  "uncaughtErrors": [],
+  "fixtures": true
+}
